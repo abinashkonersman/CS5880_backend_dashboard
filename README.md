@@ -24,9 +24,9 @@ How to run the User Registration & Login and User Management System With admin p
 
 6. Import loginsystem.sql file(given inside the zip package in SQL file folder)
 
-7.Run the script http://localhost/loginsystem (frontend)
+7.Run the script http://localhost/CS5880_backend_dashboard/ (frontend)
 
-8. For admin Panel http://localhost/loginsystem/admin
+8. For admin Panel http://localhost/CS5880_backend_dashboard/admin
 
 Credential for admin panel :
 

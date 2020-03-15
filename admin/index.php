@@ -49,7 +49,7 @@ exit();
       
 	  	
 		      <form class="form-login" action="" method="post">
-		        <h2 class="form-login-heading">sign in now</h2>
+		        <h2 class="form-login-heading">sign in (Only for Admin)</h2>
                   <p style="color:#F00; padding-top:20px;" align="center">
                     <?php echo $_SESSION['action1'];?><?php echo $_SESSION['action1']="";?></p>
 		        <div class="login-wrap">

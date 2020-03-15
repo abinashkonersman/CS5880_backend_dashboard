@@ -96,7 +96,7 @@ echo "<script>alert('Data deleted');</script>";
                                   <th class="hidden-phone">First Name</th>
                                   <th> Last Name</th>
                                   <th> Email Id</th>
-                                  <th>Contact no.</th>
+                                  <th>RFID no.</th>
                                   <th>Reg. Date</th>
                               </tr>
                               </thead>

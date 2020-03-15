@@ -105,8 +105,11 @@ echo "<script>alert('Email not register with us');</script>";
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,200italic,300italic,400italic,600italic|Lora:400,700,400italic,700italic|Raleway:400,500,300,600,700,200,100' rel='stylesheet' type='text/css'>
 </head>
 <body>
+    
 <div class="main">
 		<h1>Registration and Login System</h1>
+    
+    
 	 <div class="sap_tabs">	
 			<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 			  <ul class="resp-tabs-list">
@@ -116,7 +119,8 @@ echo "<script>alert('Email not register with us');</script>";
 				  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><div class="top-img"><img src="images/top-lock.png" alt=""/></div><span>Login</span></li>
 				  <li class="resp-tab-item lost" aria-controls="tab_item-2" role="tab"><div class="top-img"><img src="images/top-key.png" alt=""/></div><span>Forgot Password</span></li>
 				  <div class="clear"></div>
-			  </ul>		
+			  </ul>	
+                
 			  	 
 			<div class="resp-tabs-container">
 					<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
@@ -132,7 +136,7 @@ echo "<script>alert('Email not register with us');</script>";
 								<input type="text" class="text" value="" name="email"  >
 								<p>Password </p>
 								<input type="password" value="" name="password" required>
-										<p>Contact No. </p>
+										<p>RFID No.(Please scan your card:) </p>
 								<input type="text" value="" name="contact"  required>
 								<div class="sign-up">
 									<input type="reset" value="Reset">

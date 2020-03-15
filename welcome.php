@@ -1,72 +1,57 @@
-<?php
-session_start();
-if (strlen($_SESSION['id']==0)) {
-  header('location:logout.php');
-  } else{
-	
-?><!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
+    
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Elegent Tab Forms,Login Forms,Sign up Forms,Registration Forms,News latter Forms,Elements"./>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    
+    
+    
+    
+<script src="js/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<title>Quizes</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Welcome </title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/heroic-features.css" rel="stylesheet">
+    
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Welcome !</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#"><?php echo $_SESSION['name'];?></a>
-                    </li>
-                    <li>
-                        <a href="logout.php">Logout</a>
-                    </li>
-                  
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <header class="jumbotron hero-spacer">
-            <h1>A Warm Welcome!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a  href="logout.php" class="btn btn-primary btn-large">Logout </a>
-            </p>
-        </header>
+<div class="container">
+    
+    
+	<h1 class="page-header text-center">Please Answer The Following Questions:</h1>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<form method="POST" action="check_answer.php">
+				<?php
+					$iterate = 1;
+					$conn = new mysqli('localhost', 'root', '', 'loginsystem');
 
-        <hr>
+					//this will arrange the questions randomly and 10 only
+					$sql = "SELECT * FROM truefalse ORDER BY rand() LIMIT 10";
+					$query = $conn->query($sql);
+					while($row = $query->fetch_array()){
+						?>
+						<div>
+							<input type="hidden" value="<?php echo $row['questionid']; ?>||<?php echo $iterate; ?>" name="questionid[]">
+							<p><?php echo $iterate; ?>. <?php echo $row['question']; ?></p>
+							<input type="radio" name="answer_<?php echo $iterate; ?>" value="1"> True
+	  						<input type="radio" name="answer_<?php echo $iterate; ?>" value="0"> False
+						</div><br>
+						<?php
 
-
-      
-
-
-        </div>
-
-        <hr>
-
-
-    </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+					$iterate++;	
+					}
+					
+				?>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<br><br>
+			</form>
+		</div>
+	</div>
+</div>
 </body>
-
 </html>
-<?php } ?>

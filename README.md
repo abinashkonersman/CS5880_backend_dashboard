@@ -28,6 +28,9 @@ How to run the User Registration & Login and User Management System With admin p
 
 8. For admin Panel http://localhost/CS5880_backend_dashboard/admin
 
+9. For station question and answer and scoreboard : http://localhost/CS5880_backend_dashboard/station.php
+
+
 Credential for admin panel :
 
 For testing
